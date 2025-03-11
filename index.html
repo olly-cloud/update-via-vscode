@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forex Trading App</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        nav {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            color: #667eea;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #764ba2;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+
+        .forex-rates {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .forex-rates p {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+
+        .forex-rates strong {
+            color: #764ba2;
+        }
+
+        footer {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 40px;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        /* Hover Effects */
+        .forex-rates:hover {
+            transform: translateY(-5px);
+            transition: transform 0.3s ease;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Forex Trading App</h1>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#rates">Forex Rates</a>
+        <a href="#trade">Trade</a>
+        <a href="#account">Account</a>
+    </nav>
+
+    <div class="container">
+        <section id="home">
+            <h2>Welcome to Forex Trading</h2>
+            <p>Start trading currencies with ease. Check the latest forex rates and make informed decisions.</p>
+        </section>
+
+        <section id="rates" class="forex-rates">
+            <h2>Current Forex Rates</h2>
+            <p>Loading forex rates...</p>
+            <!-- Dynamically populated with forex rates using JavaScript -->
+        </section>
+
+        <section id="trade">
+            <h2>Trade</h2>
+            <p>Place your trades here.</p>
+            <!-- Add a trading form or interface here -->
+        </section>
+
+        <section id="account">
+            <h2>Account</h2>
+            <p>Manage your account settings and view your trading history.</p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Forex Trading App. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Example JavaScript to fetch and display forex rates
+        document.addEventListener('DOMContentLoaded', function() {
+            const forexRatesSection = document.querySelector('.forex-rates p');
+            const forexRates = {
+                'USD/EUR': 0.85,
+                'USD/GBP': 0.73,
+                'USD/JPY': 110.25,
+                'USD/AUD': 1.30
+            };
+
+            let ratesHtml = '';
+            for (const [pair, rate] of Object.entries(forexRates)) {
+                ratesHtml += `<strong>${pair}</strong>: ${rate}<br>`;
+            }
+
+            forexRatesSection.innerHTML = ratesHtml;
+        });
+    </script>
+
+</body>
